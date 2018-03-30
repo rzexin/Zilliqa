@@ -94,7 +94,7 @@ Node::Node(Mediator& mediator, bool toRetrieveHistory)
         (uint64_t)m_mediator.m_dsBlockChain.GetBlockCount());
 }
 
-Node::~Node() {}
+Node::~Node() = default;
 
 bool Node::StartRetrieveHistory()
 {

@@ -56,7 +56,7 @@ Lookup::Lookup(Mediator& mediator)
 #endif // IS_LOOKUP_NODE
 }
 
-Lookup::~Lookup() {}
+Lookup::~Lookup() = default;
 
 #ifndef IS_LOOKUP_NODE
 void Lookup::SetLookupNodes()
