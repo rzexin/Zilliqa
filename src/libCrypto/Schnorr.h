@@ -82,7 +82,7 @@ struct PrivKey : public Serializable
     std::shared_ptr<BIGNUM> m_d;
 
     /// Flag to indicate if parameters have been initialized.
-    bool m_initialized;
+    bool m_initialized{false};
 
     /// Default constructor for generating a new key.
     PrivKey();
@@ -120,7 +120,7 @@ struct PubKey : public Serializable
     std::shared_ptr<EC_POINT> m_P;
 
     /// Flag to indicate if parameters have been initialized.
-    bool m_initialized;
+    bool m_initialized{false};
 
     /// Default constructor for an uninitialized key.
     PubKey();
@@ -182,7 +182,7 @@ struct Signature : public Serializable
     std::shared_ptr<BIGNUM> m_s;
 
     /// Flag to indicate if parameters have been initialized.
-    bool m_initialized;
+    bool m_initialized{false};
 
     /// Default constructor.
     Signature();
