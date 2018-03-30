@@ -260,11 +260,11 @@ bool Node::OnNodeMissingTxns(const std::vector<unsigned char>& errorMsg,
 {
     LOG_MARKER();
 
-    uint32_t numOfAbsentHashes
+    auto numOfAbsentHashes
         = Serializable::GetNumber<uint32_t>(errorMsg, offset, sizeof(uint32_t));
     offset += sizeof(uint32_t);
 
-    uint32_t blockNum
+    auto blockNum
         = Serializable::GetNumber<uint32_t>(errorMsg, offset, sizeof(uint32_t));
     offset += sizeof(uint32_t);
 
@@ -281,7 +281,7 @@ bool Node::OnNodeMissingTxns(const std::vector<unsigned char>& errorMsg,
         missingTransactions.push_back(txnHash);
     }
 
-    uint32_t portNo
+    auto portNo
         = Serializable::GetNumber<uint32_t>(errorMsg, offset, sizeof(uint32_t));
 
     uint128_t ipAddr = from.m_ipAddress;
@@ -410,8 +410,7 @@ bool Node::RunConsensusOnMicroBlockWhenShardLeader()
                          << m_mediator.m_selfPeer.GetPrintableIPAddress()
                          << "][" << m_mediator.m_currentEpochNum << "] BGIN");
 #endif // STAT_TEST
-    ConsensusLeader* cl
-        = dynamic_cast<ConsensusLeader*>(m_consensusObject.get());
+    auto* cl = dynamic_cast<ConsensusLeader*>(m_consensusObject.get());
     cl->StartConsensus(microblock);
 
     return true;

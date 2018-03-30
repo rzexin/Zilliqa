@@ -657,7 +657,7 @@ bool Node::ProcessCreateTransaction(const vector<unsigned char>& message,
 
     // To-do: Replace dummy values with the required ones
     //uint32_t version = 0;
-    uint32_t version = (uint32_t)m_consensusMyID; //hack
+    auto version = (uint32_t)m_consensusMyID; //hack
     uint256_t nonce = 0;
 
     array<unsigned char, TRAN_SIG_SIZE> signature;
