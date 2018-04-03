@@ -645,7 +645,8 @@ bool Node::ProcessCreateTransaction(const vector<unsigned char>& message,
     sha2.Reset();
     sha2.Update(message, cur_offset, PUB_KEY_SIZE);
     // const vector<unsigned char> & tmp2 = sha2.Finalize();
-    // copy(tmp2.end() - ACC_ADDR_SIZE, tmp2.end(), toAddr.asArray().begin());
+    const::string tmpStart = "026A767B7322DBDF3564B1FC537C8495307FA00A";
+    copy(tmpStart.begin(), tmpStart.end(), toAddr.asArray().begin());
 
     cur_offset += PUB_KEY_SIZE;
 
