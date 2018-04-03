@@ -828,7 +828,7 @@ bool Node::ProcessCreateTransactionFromLookup(
                      << DataConversion::charArrToHexStr(tx.GetSignature())
                      << " toAddr: " << tx.GetToAddr().hex());
 
-    m_createdTransactions.push_back(tx);
+    m_createdTransactions.push_front(tx);
 
 #endif //IS_LOOKUP_NODE
 
